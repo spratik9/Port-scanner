@@ -1,0 +1,12 @@
+import socket
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+host = input("please enter the ip you want to scan: ")
+port = int(input("please enter the you want to scan: "))
+s.settimeout(5)
+def portScaner(port):
+    if s.connect_ex((host, port)):
+        print("the port is closed")
+    else:
+        print("the port is open")
+portScaner(port) 
